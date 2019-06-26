@@ -1,26 +1,22 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import Products from "./components/products";
-import Posts from "./components/posts";
-import Home from "./components/home";
-import Dashboard from "./components/admin/dashboard";
-import ProductDetails from "./components/productDetails";
-class NavBar extends Component {
-  state = {};
-  render() {
-    return (
-      <Switch>
-        <Route path="/products/:id" component={ProductDetails} />
-        <Route
-          path="/products"
-          render={props => <Products sortBy="newest" {...props} />}
-        />
-        <Route path="/posts/:year?/:month?" component={Posts} />
-        <Route path="/admin" component={Dashboard} />
-        <Route path="/" exact component={Home} />
-      </Switch>
-    );
-  }
-}
+import React from "react";
+import { Link } from "react-router-dom";
+const NavBar = () => {
+  return (
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/products">Products</Link>
+      </li>
+      <li>
+        <Link to="/posts/2018/06">Posts</Link>
+      </li>
+      <li>
+        <Link to="/admin">Admin</Link>
+      </li>
+    </ul>
+  );
+};
 
 export default NavBar;
