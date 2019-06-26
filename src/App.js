@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
 import Products from "./components/products";
-import NavBar from "./components/navbar";
-
 import Posts from "./components/posts";
 import Home from "./components/home";
 import Dashboard from "./components/admin/dashboard";
 import ProductDetails from "./components/productDetails";
+import NavBar from "./components/navbar";
+
 import "./App.css";
 
 class App extends Component {
@@ -14,18 +14,6 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <div className="container">
-          <Switch>
-            <Route path="/products/:id" component={ProductDetails} />
-            <Route
-              path="/products"
-              render={props => <Products sortBy="newest" {...props} />}
-            />
-            <Route path="/posts/:year?/:month" component={Posts} />
-            <Route path="/admin" component={Dashboard} />
-            <Route path="/" exact component={Home} />
-          </Switch>
-        </div>
       </div>
     );
   }
