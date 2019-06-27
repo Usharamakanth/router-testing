@@ -18,10 +18,7 @@ class App extends Component {
         <div className="container">
           <Switch>
             <Route path="/products/:id" component={ProductDetails} />
-            <Route
-              path="/products"
-              render={props => <Products sortBy="newest" {...props} />}
-            />
+            <Route path="/products" component={Products} />
             <Route path="/posts/:year?/:month?" component={Posts} />
             <Route path="/admin" component={Dashboard} />
             <Route path="/" exact component={Home} />
